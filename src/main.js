@@ -14,6 +14,10 @@ import plugins from '@/plugins';
 // store
 import store from '@/store/index';
 
+// 全部组件
+import allComponents from '@/components'
+Vue.use(allComponents)
+
 // iView 和 iView Pro
 import ViewUI from 'view-design';
 import iViewPro from '@/libs/iview-pro/iview-pro.min.js';
