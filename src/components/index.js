@@ -44,7 +44,7 @@ import bingoAlert from './bingo-alert'
 import bingoVxeTable from './bingo-vxe-table'
 // import bingoLayout from './bingo-layout'
 // import bingoActionDrop from './bingo-action-drop'
-// import bingoToolbarNew from './bingo-toolbar-new'
+import bingoToolbarNew from './bingo-toolbar-new'
 // import bingoRun from './bingo-run'
 // import bingoScroll from './bingo-scroll'
 // import bmsaShrinkCard from './bmsa-shrink-card'
@@ -60,7 +60,7 @@ import bingoVxeTable from './bingo-vxe-table'
 // import bmsaInput from './bmsa-input'
 // import bingoCalendarOver from './bingo-calendar-over'
 // import bmsaTabs from './bmsa-tabs'
-// import bmsaPage from './bmsa-page'
+import bmsaPage from './bmsa-page'
 // import bmsaListScroll from './bmsa-list-scroll'
 // import bmsaSlider from './bmsa-slider'
 // import bmsaCompoundQuery from './bmsa-compound-query'
@@ -119,7 +119,7 @@ const components = {
     bingoVxeTable,
     // bingoLayout,
     // bingoActionDrop,
-    // bingoToolbarNew,
+    bingoToolbarNew,
     // bingoRun,
     // bingoScroll,
     // bmsaShrinkCard,
@@ -136,7 +136,7 @@ const components = {
     // bmsaTabs,
     // bmsaQuill,
     // bmsaTabsNew,
-    // bmsaPage,
+    bmsaPage,
     // bmsaCompoundQuery,
     // bmsaGantt,
     // bmsaMettingForm,
