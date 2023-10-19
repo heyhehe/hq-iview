@@ -1,0 +1,286 @@
+.toolbar-wrapper {
+  position: relative;
+  padding: 8px 80px 8px 8px;
+  min-height:48px;
+  .iconfont { // 图标对齐
+    vertical-align: middle;
+  }
+
+  button ~ button, button + .ivu-dropdown, .ivu-upload + button {
+    margin-left: 5px;
+  }
+  .ivu-divider + button{
+    margin-left: 0!important;
+  }
+
+  .ivu-upload{
+    .ivu-upload-list{
+      margin-top:0;
+    }
+  }
+
+  .toolbar-inner {
+
+  }
+  .ivu-divider{
+    height: 1.2em;
+  }
+  .toolbar-wrapper-col {
+    white-space: nowrap;
+    overflow: hidden;
+    >span~span{
+      padding-left: 5px;
+    }
+  }
+
+  .ivu-select-single{
+    min-width: 150px;
+    max-width: 250px;
+  }
+
+  .toolbar-down-button {
+    position: absolute;
+    top: 14px;
+    right: 55px;
+
+    .ivu-select-dropdown {
+      top: 0;
+      margin-top: 24px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .ivu-btn {
+      background: none;
+      border: none;
+      color: #515a6e;
+      &:hover, &:active{
+        background-color:transparent;
+        border-color:transparent;
+      }
+    }
+
+    .ivu-dropdown-menu {
+      height: 33px;
+    }
+  }
+
+  .ivu-dropdown-item{
+    min-width:60px;
+    padding:0;
+    button{
+      width:100%;
+    }
+  }
+
+  .resize-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+
+  .ivu-btn {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .ivu-btn ~ .ivu-btn, .ivu-btn + div, div + .ivu-btn{
+    margin-left: 5px;
+  }
+
+  .ivu-btn ~ .upload-wrapper{
+    .ivu-upload{
+      width: 63px;
+    }
+  }
+
+  .ivu-btn > .ivu-icon + span, .ivu-btn > span + .ivu-icon {
+    margin-left: 0;
+  }
+
+  .resize-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+
+  .arrow-btn {
+    position: absolute;
+    top: 8px;
+    right: 48px;
+  }
+}
+
+.ivu-modal{
+  .toolbar-wrapper{
+    padding-right:8px;
+    >button.resize-btn{
+      display: none;
+    }
+  }
+}
+
+.bill-vertical{
+  .content{
+    >.content-card{
+      .toolbar-wrapper{
+        padding-right:8px;
+        >button.resize-btn{
+          display: none;
+        }
+      }
+    }
+  }
+}
+.bmsa-toolbar{
+  padding-left: 120px;
+  height: 38px;
+  position: relative;
+
+  .bmsa-toolbar-overflow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:#fff;
+    z-index: 999;
+    top:0;
+    left:0;
+  }
+  .ivu-btn{
+    margin-right: 6px;
+    padding: 0 10px;
+    min-width: 70px;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid;
+    overflow: hidden;
+    >.ivu-icon + span, >span + .ivu-icon{
+      margin-left: 0;
+    }
+
+    &:hover{
+      color: #fff;
+    }
+  }
+  .button-left{
+    .ivu-btn{
+       float:left;
+    }
+  }
+  .ivu-btn-ghost{
+     background:#fff;
+  }
+  h3{
+    width: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    //font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    background: linear-gradient(270deg,#ffffff 40%, #dbe8fb);
+    border-radius: 4px;
+    padding: 5px;
+  }
+  .search-bar~.right-table-operate{
+    margin-left: 6px;
+  }
+  .ivu-btn-group{
+    .ivu-btn{
+      margin-left: 5px;
+      margin-right: 0;
+      padding: 0 5px;
+    }
+
+  }
+  .buttons-right{
+    display: flex;
+    float:right;
+    position: relative;
+    top: 0;
+  }
+  .buttons-groups{
+    float:right;
+    display: inline-block;
+  }
+  .button-group{
+    float:right;
+    display: inline-block;
+    border: 1px solid #dcdee2;
+    border-radius: 4px;
+    padding: 0 10px;
+    height:32px;
+    .i-link{
+      display: inline-block;
+      width:30px;
+      height:30px;
+      line-height: 30px;
+      text-align: center;
+      margin:0 2px;
+    }
+    .ivu-tooltip {
+      vertical-align: middle;
+      display: inline-block;
+      &, .ivu-tooltip-rel, .i-link{
+        height: 30px;
+      }
+    }
+  }
+  .button-group{
+    .ivu-tooltip {
+      vertical-align: middle;
+    }
+  }
+  .search-bar+.button-group{
+    margin-left: 6px;
+  }
+
+  .columnSetting-card{
+    z-index: 1000;
+    position: absolute;
+    right: -46px;
+    width: 200px;
+
+    .ivu-card-body{
+      padding: 0px;
+    }
+    .ivu-checkbox-group{
+      display: flex;
+      flex-direction: column;
+      max-height: 200px;
+      overflow-y: scroll;
+      padding:8px 0
+    }
+  }
+  .columnSetting-checkall{
+    padding: 8px 8px 0 8px;
+    position: relative;
+    .allCheckBox{
+      position: absolute;
+      top:8px;
+      right:8px;
+    }
+  }
+  .lottie-style{
+    padding-top: 2px;
+    // height: 100%;
+    >div{
+      >svg{
+        vertical-align: top;
+      }
+    }
+  }
+}
+.bmsa-toolbar.bmsa-toolbar-only{
+  padding: 8px 10px 0 10px;
+  height: 44px;
+  background-color:#F9F9F9;
+}
+.bill-container{
+  .bmsa-toolbar{
+    .fullScreenBtn{
+      display: none;
+    }
+  }
+}

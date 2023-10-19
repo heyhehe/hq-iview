@@ -1,0 +1,609 @@
+@themeList:#0077c8,#8671d3,#8c0776,#b72841,#cc6c2c,#f16420,#23598b,#43b648,#0bcde4,#39c5af;
+.theme-li{
+  li{
+    width: 46px;
+    display: inline-block;
+    height:46px;
+    padding:8px;
+    div{
+      position: relative;
+      width: 30px;
+      height:30px;
+      line-height: 30px;
+      text-align: center;
+      border-radius: 8px;
+      i{
+        display: none;
+        font-size: 22px;
+        color:#fff;
+        position: absolute;
+        top:5px;
+        left:5px;
+      }
+      i.active{
+        display: inline-block;
+      }
+    }
+    div.active{
+      i{
+        display: inline-block;
+      }
+    }
+  }
+}
+.ml-loop(@themeList,@i:1,@val:extract(@themeList,@i)) when (length(@themeList)>=@i){
+  .theme-color-@{i}{
+    @primary-color          : @val;
+    @processing-color       : @primary-color;
+    @selected-color         : fade(@primary-color, 90%);
+    @btn-group-border       : shade(@primary-color, 5%);
+    @btn-primary-bg         : @primary-color;
+    @input-hover-border-color    : @primary-color;
+    @input-focus-border-color    : @primary-color;
+    @slider-color              : tint(@primary-color, 20%);
+    @table-td-hover-bg      :fade(@primary-color, 90%);
+    @fade5                  :fade(@primary-color, 5%);
+    @darken                   :darken(@primary-color, 10%);
+    @lighten                  :lighten(@primary-color, 10%);
+    .i-layout{
+      &-header{
+        &-color{
+          &-primary{
+            background: #2173dc;
+            background: -webkit-linear-gradient(to right, @darken, @primary-color, @lighten);
+            background: -moz-linear-gradient(to right, @darken, @primary-color, @lighten);
+            background: -o-linear-gradient(to right, @darken, @primary-color, @lighten);
+            background: linear-gradient(to right, @darken, @primary-color, @lighten);
+          }
+        }
+      }
+      &-tabs{
+        .ivu-tabs.ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab-active{
+          color: @val;
+          background-color:tint(@val,90%);
+          border: 1px solid tint(@val,50%);
+          &:hover{
+            color: @val;
+          }
+          .ivu-tabs-close{
+            color:@val;
+          }
+        }
+      }
+    }
+    .i-layout-menu{
+      &-side{
+        &-title{
+          &-text{
+            &-selected{
+              color: @val;
+            }
+          }
+        }
+      }
+    }
+    // .query-box{
+    //   border: 1px solid tint(@primary-color,65%);
+    //   background-color: tint(@primary-color,95%);
+    // }
+
+    .toolbar-wrapper, .timelineout .time{
+      background: fade(@primary-color, 15%);
+    }
+    .timelineout .time{
+      color:@primary-color;
+    }
+    .toolbar-wrapper .ivu-divider{
+      background: fade(@primary-color, 75%);
+    }
+
+    .i-layout-sider.i-layout-sider-dark{
+      &,.i-layout-sider-logo-dark{
+        background: @primary-color;
+        border-bottom-color: @primary-color;
+      }
+    }
+    .ivu-menu-dark.ivu-menu-vertical {
+      background: darken(@primary-color,20%);
+      .ivu-menu-opened {
+        background: darken(@primary-color,20%);
+        .ivu-menu-submenu-title {
+          background: darken(@primary-color,20%);
+        }
+      }
+    }
+    .ivu-menu-dark .ivu-menu-item:hover,
+    .ivu-menu-dark .ivu-menu-submenu-title:hover,
+    .ivu-menu-dark .ivu-menu-item-active:not(.ivu-menu-submenu),
+    .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item-active,
+    .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item-active:hover{
+      background: hsla(0,0%,100%,.2)!important
+    }
+
+    .ivu-modal .ivu-modal-header,.vxe-modal--wrapper .vxe-modal--header {
+      //background: darken(@primary-color,0);
+      //background: -webkit-linear-gradient(to right, @darken, @primary-color, @lighten);
+      //background: -moz-linear-gradient(to right, @darken, @primary-color, @lighten);
+      //background: -o-linear-gradient(to right, @darken, @primary-color, @lighten);
+      background: @primary-color;
+    }
+
+
+    .@{btn-prefix-cls} {
+      &-primary {
+        background-color: lighten(@primary-color, 5%);
+        border-color: @val;
+        &:hover, //&:focus,
+        &:active,
+        &.active {
+          background-color: darken(@primary-color, 2%);
+        }
+      }
+      &-ghost{
+        background-color:#fff;
+        color:@val;
+        &:hover, //&:focus,
+        &:active,
+        &.active {
+          background-color: @val;
+          color:#fff;
+        }
+      }
+    }
+
+    .@{page-prefix-cls} {
+      &-item {
+        &:hover {
+          border-color: @val;
+          a {
+            color: @val;
+          }
+        }
+        &-active {
+          border-color: @val;
+
+          a, &:hover a {
+            color: @val;
+          }
+        }
+      }
+      &-prev,
+      &-next {
+        &:hover {
+          border-color: @val;
+
+          a {
+            color: @val;
+          }
+        }
+      }
+      &-simple &-simple-pager {
+        input {
+          &:hover {
+            border-color: @val;
+          }
+        }
+      }
+    }
+
+    .@{input-prefix-cls} {
+      &:hover{
+        border-color: tint(@val, 10%);
+      }
+      &:focus{
+        border-color: tint(@val, 20%);
+        box-shadow: 0 0 0 2px fade(@val, 20%);
+      }
+      &-search{
+        background: @val !important;
+        border-color: @val !important;
+        &:hover{
+          background: tint(@val, 20%) !important;
+          border-color: tint(@val, 20%) !important;
+        }
+        &:active{
+          background: shade(@val, 5%) !important;
+          border-color: shade(@val, 5%) !important;
+        }
+      }
+      &-with-search{
+        &:hover{
+          .@{input-prefix-cls} {
+            border-color: tint(@val, 20%);
+          }
+        }
+      }
+    }
+
+    .@{input-number-prefix-cls} {
+      &-handler {
+        &:hover &-down-inner {
+          color: tint(@val, 20%);
+        }
+      }
+    }
+
+    .@{table-prefix-cls} {
+      &-filter{
+        i{
+          &.on{
+            color: @val;
+          }
+        }
+      }
+    }
+
+    .@{tree-prefix-cls} {
+      &-title {
+        &:hover {
+          background-color: tint(@val, 90%);
+        }
+        &-selected, &-selected:hover{
+          background-color: tint(@val, 80%);
+        }
+      }
+    }
+
+    .@{date-picker-prefix-cls} {
+      &-cells{
+        &-focused{
+          em{
+            box-shadow: 0 0 0 1px @val inset;
+          }
+        }
+        &-cell{
+          &-today {
+            em {
+              &:after{
+                background: @val;
+              }
+            }
+          }
+        }
+      }
+      &-cells-year,&-cells-month{
+        .@{date-picker-prefix-cls}-cells-cell-focused{
+          background-color: tint(@val, 80%);
+        }
+      }
+      &-header{
+        &-label{
+          &:hover{
+            color: @val;
+          }
+        }
+      }
+      &-btn-pulse {
+        background-color: tint(@val, 80%) !important;
+      }
+    }
+
+    .@{picker-prefix-cls} {
+      &-panel {
+        &-icon-btn {
+          &:hover{
+            color: @val;
+          }
+        }
+      }
+    }
+
+    .@{timeline-prefix-cls} {
+      &-item {
+        &-head {
+          &-blue {
+            border-color: @val;
+            color: @val;
+          }
+        }
+      }
+    }
+
+    .@{time-picker-prefix-cls} {
+      &-cells{
+        &-cell{
+          &-selected ,&-selected:hover{
+            color: @val;
+          }
+          &-focused{
+            background-color: tint(@val, 80%);
+          }
+        }
+      }
+    }
+
+    .@{tabs-prefix-cls} {
+      &-ink-bar {
+        background-color: @val;
+      }
+      &-nav {
+        .@{tabs-prefix-cls}-tab:hover{
+            color: @val;
+        }
+        .@{tabs-prefix-cls}-tab-active {
+          color: @val;
+        }
+      }
+    }
+
+    .@{alert-prefix-cls}{
+      &-info {
+        border: @border-width-base @border-style-base ~`colorPalette("@{val}", 3)`;
+        background-color: ~`colorPalette("@{val}", 1)`;
+        .@{alert-prefix-cls}-icon {
+          color: @val;
+        }
+      }
+    }
+
+    .@{cascader-prefix-cls} {
+      &-menu{
+        & &-item{
+          &-active{
+            color: @val;
+          }
+        }
+      }
+    }
+
+    .@{cascader-prefix-cls}-transfer{
+      .@{cascader-prefix-cls} {
+        &-menu{
+          &-item{
+            &-active{
+              color: @val;
+            }
+          }
+        }
+      }
+    }
+
+    .@{cell-prefix-cls} {
+      &-selected, &&-selected:hover{
+        background:  ~`colorPalette("@{val}", 1)`;
+      }
+    }
+
+    .@{dropdown-prefix-cls} {
+      &-item-selected, &-item&-item-selected:hover{
+        background:  ~`colorPalette("@{val}", 1)`;
+      }
+    }
+
+    .@{list-prefix-cls} {
+      &-item{
+        &-meta{
+          &-title {
+            > a {
+              &:hover {
+                color: @val;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .@{loading-bar-prefix-cls} {
+      &-inner {
+        &-color-primary {
+          background-color: @val;
+        }
+      }
+    }
+
+    .@{menu-prefix-cls} {
+      &-primary{
+        background: @val;
+      }
+      &-light&-horizontal &-item, &-light&-horizontal &-submenu{
+        &-active, &:hover{
+          color: @val;
+          border-bottom: 2px solid @val;
+        }
+      }
+      &-vertical &-item,
+      &-vertical &-submenu-title{
+        &:hover{
+          color: darken(@val, 10%);
+        }
+      }
+      &-light{
+        .@{menu-prefix-cls}-item-active:not(.@{menu-prefix-cls}-submenu){
+          color: darken(@primary-color, 10%);
+          background: ~`colorPalette("@{primary-color}", 1)`;
+          z-index: 2;
+          &:after{
+            background: @primary-color;
+          }
+        }
+      }
+      &-light&-vertical &-item{
+        background-color:#000;
+        /*&-item-active:not(.@{menu-prefix-cls}-submenu){
+          color: @val;
+          background: ~`colorPalette("@{primary-color}", 1)`;
+          background-color:#000!important;
+          z-index: 2;
+          &:after{
+            background: #000;
+          }
+        }*/
+      }
+      &-dark&-vertical &-item, &-dark&-vertical &-submenu-title{
+        &-active:not(.@{menu-prefix-cls}-submenu){
+          color: @val;
+        }
+      }
+      &-dark&-vertical &-submenu &-item{
+        &-active,&-active:hover{
+          background: @val!important;
+        }
+      }
+    }
+
+    .@{message-prefix-cls} {
+      &-loading .@{icon-prefix-cls} {
+        color: @val;
+      }
+    }
+
+    .@{radio-prefix-cls}-focus {
+      box-shadow: 0 0 0 2px fade(@val, 20%);
+    }
+
+    .@{radio-prefix-cls} {
+      &-inner {
+        &:after {
+          background-color: @val;
+        }
+      }
+    }
+
+    .@{radio-prefix-cls}-checked {
+      .@{radio-inner-prefix-cls} {
+        border-color: @val;
+      }
+      &:hover {
+        .@{radio-inner-prefix-cls} {
+          border-color: @val;
+        }
+      }
+    }
+
+    .@{radio-group-button-prefix-cls} {
+      .@{radio-prefix-cls}-wrapper {
+        &:after{
+          background: fade(@val, 20%);
+        }
+        &:hover {
+          color: @val;
+        }
+        &-checked {
+          border-color: @val;
+          color: @val;
+          box-shadow: -1px 0 0 0 @val;
+        }
+        &:before{
+          // background: @val;
+        }
+        &.@{radio-prefix-cls}-focus{
+          box-shadow: -1px 0 0 0 @val, 0 0 0 2px fade(@val, 20%);
+          &:after{
+            background: fade(@val, 20%);
+          }
+        }
+        &:hover {
+          border-color: tint(@val, 20%);
+          //box-shadow: -1px 0 0 0 tint(@val, 20%);
+          color: tint(@val, 20%);
+        }
+
+        &:active {
+          border-color: shade(@val, 5%);
+          //box-shadow: -1px 0 0 0 shade(@val, 5%);
+          color: shade(@val, 5%);
+        }
+      }
+    }
+
+    .@{switch-prefix-cls} {
+      &:before {
+        border: 1px solid @val;
+        border-color: transparent transparent transparent @val;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 2px fade(@val, 20%);
+      }
+
+      &-checked {
+        border-color: @val;
+        background-color: @val;
+      }
+      &-disabled&-checked {
+        border-color: @val;
+        background-color: @val;
+      }
+    }
+
+    tr.@{table-prefix-cls}-row-hover {
+      td{
+        background-color: fade(@val, 15%)!important;
+      }
+    }
+    .@{checkbox-prefix-cls}-checked {
+
+      &:hover {
+        .@{checkbox-inner-prefix-cls} {
+          border-color: @primary-color;
+        }
+      }
+      .@{checkbox-inner-prefix-cls} {
+        border-color: @primary-color;
+        background-color: @primary-color;
+      }
+    }
+    // 禁用
+    .@{checkbox-prefix-cls}-disabled {
+      &.@{checkbox-prefix-cls}-checked {
+          &:hover {
+              .@{checkbox-inner-prefix-cls} {
+                  border-color: @border-color-base;
+              }
+          }
+
+          .@{checkbox-inner-prefix-cls} {
+              background-color: #f3f3f3;
+              border-color: @border-color-base;
+
+              &:after {
+                  animation-name: none;
+                  border-color: #ccc;
+              }
+          }
+      }
+
+      &:hover {
+          .@{checkbox-inner-prefix-cls} {
+              border-color: @border-color-base;
+          }
+      }
+
+      .@{checkbox-inner-prefix-cls} {
+          border-color: @border-color-base;
+          background-color: #f3f3f3;
+          &:after {
+              animation-name: none;
+              border-color: #f3f3f3;
+          }
+      }
+  }
+
+    .@{modal-prefix-cls} {
+      &-content {
+        &-header {
+          background: @primary-color;
+          background: -webkit-gradient(linear,left top,right top,from(@darken),color-stop(@primary-color),to(@lighten));
+          background: linear-gradient(90deg,@darken,@primary-color,@lighten);
+        }
+      }
+    }
+
+    .ag-theme-fresh .ag-row-selected,.uploader-wrapper .tableList li:hover{
+      background-color:@fade5;
+    }
+    .ag-theme-fresh .ag-ltr .ag-has-focus .ag-cell-focus.ag-cell-range-single-cell{
+      border-color: @darken;
+    }
+
+  }
+  .theme-li{
+    .theme-color-@{i}{
+      background:@val;
+    }
+  }
+  //@primary-color: @val;
+  .ml-loop(@themeList,(@i+1));
+}
+.ml-loop(@themeList);
