@@ -18,6 +18,22 @@ import store from '@/store/index';
 import allComponents from '@/components'
 Vue.use(allComponents)
 
+// vxe-table vxe-table-plugin-iview
+import 'xe-utils'
+import VXETable from 'vxe-table'
+import 'vxe-table/lib/style.css'
+Vue.use(VXETable)
+// import VXETablePluginIView from 'vxe-table-plugin-iview'
+// import VXETablePluginExportXLSX from 'vxe-table-plugin-export-xlsx'
+// import 'vxe-table-plugin-iview/dist/style.css'
+VXETable.setup({
+  // 对组件内置的提示语进行国际化翻译
+  i18n: (key, args) => i18n.t(key, args)
+})
+// Vue.use(VXETable)
+// VXETable.use(VXETablePluginIView)
+// VXETable.use(VXETablePluginExportXLSX)
+
 // iView 和 iView Pro
 import ViewUI from 'view-design';
 import iViewPro from '@/libs/iview-pro/iview-pro.min.js';

@@ -6,34 +6,6 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "35438864",
-      "name": "打开折叠",
-      "font_class": "dakaizhedie",
-      "unicode": "e846",
-      "unicode_decimal": 59462
-    },
-    {
-      "icon_id": "35438865",
-      "name": "折叠",
-      "font_class": "zhedie1",
-      "unicode": "e847",
-      "unicode_decimal": 59463
-    },
-    {
-      "icon_id": "7378361",
-      "name": "海运",
-      "font_class": "FCL_EXPORT",
-      "unicode": "e845",
-      "unicode_decimal": 59461
-    },
-    {
-      "icon_id": "925293",
-      "name": "实心飞机",
-      "font_class": "huiliuqujinkoushipin",
-      "unicode": "e844",
-      "unicode_decimal": 59460
-    },
-    {
       "icon_id": "34514133",
       "name": "可编辑",
       "font_class": "-kebianji",
