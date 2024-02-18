@@ -16,9 +16,9 @@
 // import bmsaMenu from './bmsa-menu'
 // import bmsaExcelWeb from './bmsa-excel-web'
 //
-// import bingoForm from './bingo-form'
-// import bingoFormItem from './bingo-form-item'
-// import bingoGridItem from './bingo-grid-item'
+import bingoForm from './bingo-form'
+import bingoFormItem from './bingo-form-item'
+import bingoGridItem from './bingo-grid-item'
 // import bingoShrinkCard from './bingo-shrink-card'
 // import bingoToolbar from './bingo-toolbar'
 // import bingoQuery from './bingo-query'
@@ -27,7 +27,7 @@ import bingoModal from './bingo-modal'
 // import bingoHeadPhoto from './bingo-head-photo'
 // import bingoSuperFlow from './bingo-super-flow'
 // import bingoSelectIcon from './bingo-select-icon'
-// import bingoTree from './bingo-tree'
+import bingoTree from './bingo-tree'
 // import bingoSelect from './bingo-select'
 // import bingoCreateInfo from './bingo-create-info'
 // import bingoState from './bingo-state'
@@ -49,7 +49,7 @@ import bingoToolbarNew from './bingo-toolbar-new'
 // import bingoScroll from './bingo-scroll'
 // import bmsaShrinkCard from './bmsa-shrink-card'
 // import bmsaBillNew from './bmsa-bill-new'
-// import bmsaModal from './bmsa-modal'
+import bmsaModal from './bmsa-modal'
 // import bmsaDocument from './bmsa-document'
 // import bmsaTag from './bmsa-tag'
 // import bingoFileUpload from './bingo-file-upload'
@@ -91,9 +91,9 @@ const components = {
     // bmsaListScroll,
     // bmsaSlider,
     //
-    // bingoForm,
-    // bingoFormItem,
-    // bingoGridItem,
+    bingoForm,
+    bingoFormItem,
+    bingoGridItem,
     // bingoShrinkCard,
     // bingoToolbar,
     // bingoQuery,
@@ -102,7 +102,7 @@ const components = {
     // bingoHeadPhoto,
     // bingoSuperFlow,
     // bingoSelectIcon,
-    // bingoTree,
+    bingoTree,
     // bingoSelect,
     // bingoCreateInfo,
     // bingoState,
@@ -124,7 +124,7 @@ const components = {
     // bingoScroll,
     // bmsaShrinkCard,
     // bmsaBillNew,
-    // bmsaModal,
+    bmsaModal,
     // bmsaDocument,
     // bmsaTag,
     // bingoFileUpload,

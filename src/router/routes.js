@@ -1,5 +1,6 @@
 import dashboard from './modules/dashboard';
 import BasicLayout from '@/layouts/basic-layout';
+import bmsa from './modules/bmsa'
 
 /**
  * 在主框架内显示
@@ -55,7 +56,8 @@ const frameIn = [
             }
         ]
     },
-    dashboard
+    dashboard,
+    bmsa
 ];
 
 /**
